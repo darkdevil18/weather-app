@@ -1,17 +1,54 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
+import WeatherDetails from './WeatherDetails';
 
-export default class Form extends Component {
-    render() {
-        return (
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                        <label for="floatingInput">City</label>
-                    </div>
-                    <button class="btn btn-primary" type="submit">Search</button>
-                </form>
-            </div>
-        )
+
+export default function Form() {
+
+    const apiKey = '92c3455c231da84ffd5e9da4dcfc1d4c'
+    const apiURL = 'https://api.openweathermap.org/data/2.5/weather?q='
+
+    const [searchText, setSearchText] = useState("");
+    const [weather, setWeather] = useState([]);
+
+    const url = city => `${apiURL}${city}&appid=${apiKey}&units=metric`
+
+    const weatherData = async (e) => {
+        e.preventDefault();
+        if (searchText === "") {
+            alert('Add city name!');
+        }
+        else {
+            const data = await fetch(url(searchText), { origin: "cross" });
+            const parsedData = await data.json();
+            setWeather({
+                data: parsedData,
+            });
+            setSearchText("");
+        }
+    };
+
+    const handleChange = (e) => {
+        e.preventDefault();
+
+        let value = e.target.value;
+
+        setSearchText(value);
     }
+
+
+    return (
+        <div className="container mt-5 border border-2 border-primary rounded-3 vstack" style={{height:'80vh'}}>
+            <form className="hstack mt-3 mb-5 justify-content-center">
+                <input type="text" value={searchText} className="form-control rounded-pill w-25" onChange={(e) => handleChange(e)} id="search-box" autoComplete="off" />
+                <button className="btn btn-primary ms-3 rounded-pill" onClick={(e) => weatherData(e)} type="submit"><i className="bi bi-search me-2"></i>Search</button>
+            </form>
+
+            <div>
+                {
+                    weather.data !== undefined ? (<WeatherDetails data={weather.data} />) : null
+                }
+            </div>
+
+        </div>
+    )
 }
