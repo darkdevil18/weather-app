@@ -34,16 +34,16 @@ export default function Form() {
 
   return (
     <div
-      className="container mt-5 border border-2 border-primary vstack p-0"
+      className="container-md mt-5 border border-2 border-primary vstack p-0"
       style={{
-        height: "80vh",
-        width: "70vw",
+        height: "90vh",
+        width: "90vw",
         borderRadius: '1rem',
       }}
       id="container"
     >
 
-      <div className="container-flex border-bottom border-3 rounded-top border-primary p-0 m-0">
+      <div className="border-bottom border-3 rounded-top border-primary p-0 m-0">
         <form className="hstack my-5 justify-content-center pt-2 pb-3">
           <input
             type="text"

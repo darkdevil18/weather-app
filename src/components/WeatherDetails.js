@@ -22,7 +22,6 @@ export default function WeatherDetails(props) {
     >
       <h1 className="text-light">{data.name}</h1>
       <div className="d-flex justify-content-evenly align-items-center">
-        {/* <img src={iconURL} alt="" /> */}
         <div className="vstack text-light">
           <h5>Current Temp:- {Math.floor(data.main.temp)}&#8451;</h5>
           <h5>Feels Like:- {data.main.feels_like}&#8451;</h5>
@@ -30,7 +29,6 @@ export default function WeatherDetails(props) {
           <h5>Visibility:- {data.visibility / 1000}Km</h5>
           <h5>Weather:- {data.weather[0].main}</h5>
         </div>
-        {/* <img src={iconURL} alt="" /> */}
       </div>
     </div>
   );
