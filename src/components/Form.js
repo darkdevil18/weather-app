@@ -52,6 +52,7 @@ export default function Form() {
             onChange={(e) => handleChange(e)}
             id="search-box"
             autoComplete="off"
+            placeholder="Enter city name"
           />
           <button
             className="btn btn-primary ms-3 rounded-pill"
