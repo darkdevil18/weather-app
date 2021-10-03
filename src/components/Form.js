@@ -43,7 +43,7 @@ export default function Form() {
       id="container"
     >
 
-      <div className="border-bottom border-3 rounded-top border-primary p-0 m-0">
+      <div className="border-bottom border-3 rounded-top border-success p-0 m-0">
         <form className="hstack my-5 justify-content-center pt-2 pb-3">
           <input
             type="text"
