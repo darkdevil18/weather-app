@@ -34,26 +34,34 @@ export default function Form() {
 
   return (
     <div
-      className="container mt-5 border border-2 border-primary vstack"
-      style={{ height: "80vh", width: "70vw", borderRadius:'1rem'}}
+      className="container mt-5 border border-2 border-primary vstack p-0"
+      style={{
+        height: "80vh",
+        width: "70vw",
+        borderRadius: '1rem',
+      }}
+      id="container"
     >
-      <form className="hstack my-5 justify-content-center py-3">
-        <input
-          type="text"
-          // value={searchText}
-          className="form-control rounded-pill w-50"
-          onChange={(e) => handleChange(e)}
-          id="search-box"
-          autoComplete="off"
-        />
-        <button
-          className="btn btn-primary ms-3 rounded-pill"
-          onClick={(e) => weatherData(e)}
-          type="submit"
-        >
-          <i className="bi bi-search me-2"></i>Search
-        </button>
-      </form>
+
+      <div className="container-flex border-bottom border-3 rounded-top border-primary p-0 m-0">
+        <form className="hstack my-5 justify-content-center pt-2 pb-3">
+          <input
+            type="text"
+            // value={searchText}
+            className="form-control rounded-pill w-50"
+            onChange={(e) => handleChange(e)}
+            id="search-box"
+            autoComplete="off"
+          />
+          <button
+            className="btn btn-primary ms-3 rounded-pill"
+            onClick={(e) => weatherData(e)}
+            type="submit"
+          >
+            <i className="bi bi-search me-2"></i>Search
+          </button>
+        </form>
+      </div>
 
       <div>
         {weather.data !== undefined && weather.data.cod !== "404" ? (
