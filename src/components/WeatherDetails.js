@@ -2,8 +2,6 @@ import React from "react";
 
 export default function WeatherDetails(props) {
   const { data } = props;
-  // const iconURL = `https://openweathermap.org/img/wn/${data.cod !== 404 ? data.weather[0].icon : null
-  //   }@2x.png`;
 
   const bgURL = `url(/images/${data.weather[0].main}.jpg)`
 
