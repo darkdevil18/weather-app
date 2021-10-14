@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import WeatherDetails from "./WeatherDetails";
 
 export default function Form() {
-  const apiKey = "92c3455c231da84ffd5e9da4dcfc1d4c";
+  const apiKey = process.env.REACT_APP_API_KEY_FOR_WEATHER;
   const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=";
 
   const [searchText, setSearchText] = useState("");
