@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Weather App",
+  "name": "App to get weather data through city name",
   "icons": [
     {
       "src": "icon.png",
