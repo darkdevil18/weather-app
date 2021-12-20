@@ -2,20 +2,16 @@ import React from "react";
 
 export default function WeatherDetails(props) {
   const { data } = props;
-
-  const bgURL = `url(/images/${data.weather[0].main}.jpg)`
-
-  const container = document.getElementById('container');
-  container.style.background = `linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), ${bgURL}`;
-  container.style.backgroundRepeat = 'no-repeat';
-  container.style.backgroundPosition = 'center';
+  console.log(data.weather[0].main)
+  // const bgURL = `url(/images/${data.weather[0].main}.jpg)`
 
   return (
     <div
-      className="vstack text-center container card mb-3 pt-5 border-0 tetx-light bg-transparent"
+      className="vstack text-center container-fluid card mb-3 pt-5 border-0 bg-transparent"
+      id="weather-container"
       style={{
-        width: "80%",
-        height: "50vh",
+        width: "100%",
+        height: "100%",
       }}
     >
       <h1 className="text-light">{data.name}</h1>
