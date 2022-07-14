@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 export default function Form(props) {
 
-  // const apiKey = process.env.REACT_APP_API_KEY_FOR_WEATHER;
-  const apiURL = "https://darkdevil018.pythonanywhere.com/api/weather/";
+  const apiKey = process.env.REACT_APP_API_KEY_FOR_WEATHER;
+  const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=";
 
   const [searchText, setSearchText] = useState("");
 
-  const url = (city) => `${apiURL}${city}`;
+  const url = (city) => `${apiURL}${city}&appid=${apiKey}&units=metric`;
 
   const weatherData = async (e) => {
     e.preventDefault();
